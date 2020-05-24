@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.lllevchenko.matempolisbest">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Kadr22BadActivity"></activity>
+        <activity android:name=".Kadr22GoodActivity" />
+        <activity android:name=".Kadr16Activity" />
+        <activity android:name=".Kadr21Activity" />
+        <activity android:name=".Kadr20Activity" />
+        <activity android:name=".Kadr19Activity" />
+        <activity android:name=".Kadr18Activity" />
+        <activity android:name=".Kadr17Activity" />
+        <activity android:name=".Kadr15Activity" />
+        <activity android:name=".Kadr14Activity" />
+        <activity android:name=".Kadr13Activity" />
+        <activity android:name=".Kadr12Activity" />
+        <activity android:name=".Kadr10Activity" />
+        <activity android:name=".Kadr9Activity" />
+        <activity android:name=".Kadr8Activity" />
+        <activity android:name=".Kadr11Activity" />
+        <activity android:name=".Kadr7Activity" />
+        <activity android:name=".Kadr6Activity" />
+        <activity android:name=".Kadr5Activity" />
+        <activity android:name=".Kadr4Activity" />
+        <activity android:name=".Kadr2Activity" />
+        <activity android:name=".Kadr3Activity" />
+        <activity android:name=".Kadr1Activity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
