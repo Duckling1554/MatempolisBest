@@ -61,6 +61,7 @@
 
             <ImageButton
                 android:id="@+id/ans31Btn"
+                android:onClick="onClick"
                 style="@style/Widget.AppCompat.ImageButton"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -68,7 +69,23 @@
                 android:adjustViewBounds="true"
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/contentDescrTwo"
-                android:onClick="twoClick"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="parent"
+                app:srcCompat="@drawable/btn_3_1" />
+
+            <ImageButton
+                android:id="@+id/ans32Btn"
+                android:onClick="onClick"
+                style="@style/Widget.AppCompat.ImageButton"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/contentDescrFour"
                 android:scaleType="fitCenter"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -77,24 +94,8 @@
                 app:srcCompat="@drawable/btn_3_2" />
 
             <ImageButton
-                android:id="@+id/ans32Btn"
-                style="@style/Widget.AppCompat.ImageButton"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:adjustViewBounds="true"
-                android:background="@android:color/transparent"
-                android:contentDescription="@string/contentDescrFour"
-                android:onClick="fourClick"
-                android:scaleType="fitCenter"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="parent"
-                app:srcCompat="@drawable/btn_3_4" />
-
-            <ImageButton
                 android:id="@+id/ans33Btn"
+                android:onClick="onClick"
                 style="@style/Widget.AppCompat.ImageButton"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -102,13 +103,12 @@
                 android:adjustViewBounds="true"
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/contentDescrSix"
-                android:onClick="sixClick"
                 android:scaleType="fitCenter"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="parent"
-                app:srcCompat="@drawable/btn_3_6" />
+                app:srcCompat="@drawable/btn_3_3" />
 
             <ImageButton
                 android:id="@+id/nextBtn"

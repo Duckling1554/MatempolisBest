@@ -5,17 +5,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 
-class Kadr1Activity : AppCompatActivity() {
+class Kadr0IdActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_kadr01)
+        setContentView(R.layout.activity_kadr00_id)
     }
 
-    fun nextClick(view: View) {
-        val intentKadr2 = Intent(this, Kadr2Activity::class.java)
-        startActivity(intentKadr2)
+    fun readyClick(view: View) {
+        val intentKadrInfo = Intent(this, Kadr0InfoActivity::class.java)
+        startActivity(intentKadrInfo)
         this.finish()
     }
-
 }

@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.*
 import android.view.*
 
-public var COUNT = 0
+var COUNT = 0
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,8 +16,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun newGameClick(view: View) {
-        val intentKadr1 = Intent(this, Kadr1Activity::class.java)
-        startActivity(intentKadr1)
+        val intentKadrId = Intent(this, Kadr0IdActivity::class.java)
+        startActivity(intentKadrId)
         this.finish()
     }
 }

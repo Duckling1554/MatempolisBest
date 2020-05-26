@@ -38,4 +38,9 @@
     <string name="contentDescrKadr22Good">Поздравляем, Вы выиграли!</string>
     <string name="contentDescrKadr22Bad">Ксожалению, вы проиграли</string>
     <string name="contentDescrKadr16">На картинке задача на пещере</string>
+    <string name="contentDescrKadrInfo">На картинке информация о игре</string>
+    <string name="textInfo">Привет, %1d! \n Скоро ты окажешься в удивительном городе Матемполисе. Ты познакомишься с его жителями и отправишься вместе с ними в приключение. \n Старайся и решай задачи правильно, потому что от твоих ответов зависит судьба Матемполиса! Удачи!</string>
+    <string name="contentDescrInfo">Инфо текст</string>
+    <string name="textGreeting">Привет-привет!\n Мы рады видеть тебя в этой игре!\n Как тебя зовут?</string>
+    <string name="hintNickname">напиши здесь своё имя...</string>
 </resources>

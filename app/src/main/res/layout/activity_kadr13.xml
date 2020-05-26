@@ -59,6 +59,7 @@
 
             <ImageButton
                 android:id="@+id/ans131Btn"
+                android:onClick="onClick"
                 style="@style/Widget.AppCompat.ImageButton"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -66,7 +67,6 @@
                 android:adjustViewBounds="true"
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/content131"
-                android:onClick="btn1Click"
                 android:scaleType="fitCenter"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -76,6 +76,7 @@
 
             <ImageButton
                 android:id="@+id/ans132Btn"
+                android:onClick="onClick"
                 style="@style/Widget.AppCompat.ImageButton"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -83,7 +84,6 @@
                 android:adjustViewBounds="true"
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/content132"
-                android:onClick="btn2Click"
                 android:scaleType="fitCenter"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -93,6 +93,7 @@
 
             <ImageButton
                 android:id="@+id/ans133Btn"
+                android:onClick="onClick"
                 style="@style/Widget.AppCompat.ImageButton"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -100,7 +101,6 @@
                 android:adjustViewBounds="true"
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/content133"
-                android:onClick="btn3Click"
                 android:scaleType="fitCenter"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

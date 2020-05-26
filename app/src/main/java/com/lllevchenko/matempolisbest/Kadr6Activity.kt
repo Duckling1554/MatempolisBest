@@ -13,6 +13,44 @@ class Kadr6Activity : AppCompatActivity() {
         setContentView(R.layout.activity_kadr06)
     }
     var flag = false
+    var id = 0
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt("btnId", id)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        val btnId = savedInstanceState.getInt("btnId")
+        when (btnId){
+            1 -> onClick(ans61Btn)
+            2 -> onClick(ans62Btn)
+            3 -> onClick(ans63Btn)
+            0 -> {}
+        }
+    }
+
+    fun onClick(view: View){
+        when (view.id)
+        {
+            R.id.ans61Btn ->    {ans61Btn.setImageResource(R.drawable.btn_6_1_chosen)
+                ans62Btn.setImageResource(R.drawable.btn_6_2)
+                ans63Btn.setImageResource(R.drawable.btn_6_3)
+                flag = true
+                id = 1}
+            R.id.ans62Btn ->    {ans61Btn.setImageResource(R.drawable.btn_6_1)
+                ans62Btn.setImageResource(R.drawable.btn_6_2_chosen)
+                ans63Btn.setImageResource(R.drawable.btn_6_3)
+                flag = false
+                id = 2}
+            R.id.ans63Btn ->    {ans61Btn.setImageResource(R.drawable.btn_6_1)
+                ans62Btn.setImageResource(R.drawable.btn_6_2)
+                ans63Btn.setImageResource(R.drawable.btn_6_3_chosen)
+                flag = false
+                id = 3}
+        }
+    }
 
     fun nextClick(view: View) {
         if (flag) COUNT ++
@@ -27,27 +65,6 @@ class Kadr6Activity : AppCompatActivity() {
         val intentKadr5 = Intent(this, Kadr5Activity::class.java)
         startActivity(intentKadr5)
         this.finish()
-    }
-
-    fun btn1Click(view: View){
-        ans61Btn.setImageResource(R.drawable.btn_6_1_chosen)
-        ans62Btn.setImageResource(R.drawable.btn_6_2)
-        ans63Btn.setImageResource(R.drawable.btn_6_3)
-        flag = true
-    }
-
-    fun btn2Click(view: View){
-        ans62Btn.setImageResource(R.drawable.btn_6_2_chosen)
-        ans61Btn.setImageResource(R.drawable.btn_6_1)
-        ans63Btn.setImageResource(R.drawable.btn_6_3)
-        flag = false
-    }
-
-    fun btn3Click(view: View){
-        ans63Btn.setImageResource(R.drawable.btn_6_3_chosen)
-        ans61Btn.setImageResource(R.drawable.btn_6_1)
-        ans62Btn.setImageResource(R.drawable.btn_6_2)
-        flag = false
     }
 
 }

@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Kadr22BadActivity"></activity>
+        <activity android:name=".Kadr0IdActivity"></activity>
+        <activity android:name=".Kadr0InfoActivity" />
+        <activity android:name=".Kadr22BadActivity" />
         <activity android:name=".Kadr22GoodActivity" />
         <activity android:name=".Kadr16Activity" />
         <activity android:name=".Kadr21Activity" />
