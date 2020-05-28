@@ -4,6 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_kadr00_id.*
 
 class Kadr0IdActivity : AppCompatActivity() {
 
@@ -13,8 +15,20 @@ class Kadr0IdActivity : AppCompatActivity() {
     }
 
     fun readyClick(view: View) {
-        val intentKadrInfo = Intent(this, Kadr0InfoActivity::class.java)
-        startActivity(intentKadrInfo)
-        this.finish()
+
+        val nickname = nicknameText.text.toString().trim()
+
+        if (nickname == ""){
+            val toast = Toast.makeText(this, "Сначала введи имя!", Toast.LENGTH_SHORT)
+            toast.show()
+        }
+        else
+        {
+            NICKNAME = nickname
+
+            val intentKadrInfo = Intent(this, Kadr0InfoActivity::class.java)
+            startActivity(intentKadrInfo)
+            this.finish()
+        }
     }
 }

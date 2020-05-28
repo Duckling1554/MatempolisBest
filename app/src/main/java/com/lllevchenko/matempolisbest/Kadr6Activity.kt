@@ -53,12 +53,13 @@ class Kadr6Activity : AppCompatActivity() {
     }
 
     fun nextClick(view: View) {
-        if (flag) COUNT ++
-
         val intentKadr7 = Intent(this, Kadr7Activity::class.java)
-        startActivity(intentKadr7)
-        this.finish()
+        val alert = ContinueDialog(intentKadr7, this)
+        alert.show(getSupportFragmentManager(), "continue")
+        if (flag) COUNT = 2
 
+        val kadr6Id = 1
+        if (flag) COUNTS[kadr6Id] = 1
     }
 
     fun backClick(view: View){

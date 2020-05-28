@@ -7,6 +7,12 @@ import android.view.*
 
 var COUNT = 0
 
+val COUNTS = arrayListOf(0, 0, 0, 0, 0)
+
+var NICKNAME = ""
+
+
+
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

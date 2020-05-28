@@ -1,10 +1,12 @@
 package com.lllevchenko.matempolisbest
 
 import android.content.Intent
+import android.media.session.PlaybackState
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.view.View
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_kadr03.*
 
 class Kadr3Activity : AppCompatActivity() {
@@ -55,16 +57,13 @@ class Kadr3Activity : AppCompatActivity() {
     }
 
     fun nextClick(view: View) {
-//        val continueWarning = ContinueDialog()
-//        val manager = supportFragmentManager
-//        continueWarning.show(manager, "Continue?")
-
-        if (flag) COUNT ++
-
         val intentKadr4 = Intent(this, Kadr4Activity::class.java)
-        startActivity(intentKadr4)
-        this.finish()
+        val alert = ContinueDialog(intentKadr4, this)
+        alert.show(getSupportFragmentManager(), "continue")
+        if (flag) COUNT = 1
 
+        val kadr3Id = 0
+        if (flag) COUNTS[kadr3Id] = 1
     }
 
     fun backClick(view: View){
