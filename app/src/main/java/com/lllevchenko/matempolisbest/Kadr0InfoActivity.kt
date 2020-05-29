@@ -14,12 +14,8 @@ class Kadr0InfoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kadr00_info)
-        textInfo.text = "Привет, $NICKNAME! \n " +
-                "Скоро ты окажешься в удивительном городе Матемполисе. " +
-                "Ты познакомишься с его жителями и отправишься вместе с ними в приключение. \n " +
-                "Старайся и решай задачи правильно, потому что от твоих ответов зависит судьба Матемполиса! " +
-                "Удачи!"
-    }
+        textViewInfo.text = getResources().getString(R.string.textInfo, NICKNAME)
+}
 
     fun startClick(view: View) {
         val intentKadr1 = Intent(this, Kadr1Activity::class.java)

@@ -9,9 +9,11 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.DialogFragment
 
-class ContinueDialog(newIntent: Intent, activity: Activity): DialogFragment() {
+class ContinueDialog(newIntent: Intent, activity: Activity, flag: Boolean): DialogFragment() {
 
     val intent = newIntent
+    val flag = flag
+
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val builder = AlertDialog.Builder(getActivity())
         return builder.setTitle("Продолжить?")
@@ -19,6 +21,7 @@ class ContinueDialog(newIntent: Intent, activity: Activity): DialogFragment() {
             .setIcon(R.drawable.alert)
             .setPositiveButton("ОК", {
                 dialog, which -> startActivity(intent)
+                if (flag) COUNT ++
                 activity?.finish()
             })
             .setNegativeButton("Отмена", null)

@@ -58,12 +58,8 @@ class Kadr3Activity : AppCompatActivity() {
 
     fun nextClick(view: View) {
         val intentKadr4 = Intent(this, Kadr4Activity::class.java)
-        val alert = ContinueDialog(intentKadr4, this)
+        val alert = ContinueDialog(intentKadr4, this, flag)
         alert.show(getSupportFragmentManager(), "continue")
-        if (flag) COUNT = 1
-
-        val kadr3Id = 0
-        if (flag) COUNTS[kadr3Id] = 1
     }
 
     fun backClick(view: View){
