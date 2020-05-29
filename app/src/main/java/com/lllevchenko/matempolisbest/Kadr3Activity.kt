@@ -14,6 +14,7 @@ class Kadr3Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kadr03)
+        ACTID = "03"
     }
 
     var flag = false
@@ -66,6 +67,15 @@ class Kadr3Activity : AppCompatActivity() {
         val intentKadr2 = Intent(this, Kadr2Activity::class.java)
         startActivity(intentKadr2)
         this.finish()
+    }
+
+    override fun onPause() {
+        super.onPause()
+
+        val saver = pref.edit()
+        saver.putInt(APP_PREFERENCES_COUNTER, COUNT)
+        saver.putString(APP_PREFERENCES_ACTID, ACTID)
+        saver.apply()
     }
 
 }

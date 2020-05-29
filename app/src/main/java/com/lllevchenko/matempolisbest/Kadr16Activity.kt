@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_kadr16.*
 
 class Kadr16Activity : AppCompatActivity() {
@@ -35,17 +36,17 @@ class Kadr16Activity : AppCompatActivity() {
     fun onClick(view: View){
         when (view.id)
         {
-            R.id.ans61Btn ->    {ans161Btn.setImageResource(R.drawable.btn_16_1_chosen)
+            R.id.ans161Btn ->    {ans161Btn.setImageResource(R.drawable.btn_16_1_chosen)
                 ans162Btn.setImageResource(R.drawable.btn_16_2)
                 ans163Btn.setImageResource(R.drawable.btn_16_3)
                 flag = true
                 id = 1}
-            R.id.ans62Btn ->    {ans161Btn.setImageResource(R.drawable.btn_16_1)
+            R.id.ans162Btn ->    {ans161Btn.setImageResource(R.drawable.btn_16_1)
                 ans162Btn.setImageResource(R.drawable.btn_16_2_chosen)
                 ans163Btn.setImageResource(R.drawable.btn_16_3)
                 flag = false
                 id = 2}
-            R.id.ans63Btn ->    {ans161Btn.setImageResource(R.drawable.btn_16_1)
+            R.id.ans163Btn ->    {ans161Btn.setImageResource(R.drawable.btn_16_1)
                 ans162Btn.setImageResource(R.drawable.btn_16_2)
                 ans163Btn.setImageResource(R.drawable.btn_16_3_chosen)
                 flag = false

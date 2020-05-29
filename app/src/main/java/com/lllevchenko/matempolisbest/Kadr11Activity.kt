@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_kadr11.*
 
 class Kadr11Activity : AppCompatActivity() {
@@ -43,12 +44,12 @@ class Kadr11Activity : AppCompatActivity() {
             R.id.ans112Btn ->    {ans111Btn.setImageResource(R.drawable.btn_11_1)
                 ans112Btn.setImageResource(R.drawable.btn_11_2_chosen)
                 ans113Btn.setImageResource(R.drawable.btn_11_3)
-                flag = true
+                flag = false
                 id = 2}
             R.id.ans113Btn ->    {ans111Btn.setImageResource(R.drawable.btn_11_1)
                 ans112Btn.setImageResource(R.drawable.btn_11_2)
                 ans113Btn.setImageResource(R.drawable.btn_11_3_chosen)
-                flag = false
+                flag = true
                 id = 3}
         }
     }
