@@ -8,6 +8,7 @@ import android.view.*
 
 var COUNT = 0
 var ACTID= ""
+
 var NICKNAME = ""
 
 val APP_PREFERENCES = "usersettings"
