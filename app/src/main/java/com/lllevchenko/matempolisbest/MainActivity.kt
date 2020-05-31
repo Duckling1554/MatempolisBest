@@ -59,23 +59,24 @@ class MainActivity : AppCompatActivity() {
         when (view.id)
         {
             R.id.newGameBtn ->    {
-                COUNT = 0
-                ACTID = 0
-                NICKNAME = ""
-                val deleter = pref.edit()
-                deleter.clear().commit()
                 val intentKadrId = Intent(this, Kadr0IdActivity::class.java)
-                startActivity(intentKadrId)
-                this.finish()}
+                val alert = NewGameDialog(intentKadrId, this)
+                alert.show(getSupportFragmentManager(), "continue")}
 
             R.id.loadGameBtn ->    {
                 COUNT = pref.getInt(APP_PREFERENCES_COUNTER, 0)
                 ACTID = pref.getInt(APP_PREFERENCES_ACTID, 0)
                 NICKNAME = pref.getString(APP_PREFERENCES_NICKNAME, null).toString()
 
-                val intentCurrent = Intent(this, ACTIVITY_DICT[ACTID]!!::class.java)
-                startActivity(intentCurrent)
-                this.finish()
+                if (ACTID == 0) {
+                    val toast = Toast.makeText(this, "Нет сохранённой игры", Toast.LENGTH_SHORT)
+                    toast.show()
+                }
+                else {
+                    val intentCurrent = Intent(this, ACTIVITY_DICT[ACTID]!!::class.java)
+                    startActivity(intentCurrent)
+                    this.finish()
+                }
 
                 }
             }
