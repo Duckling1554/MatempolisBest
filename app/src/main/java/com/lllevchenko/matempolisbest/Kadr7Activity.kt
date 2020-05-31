@@ -10,17 +10,28 @@ class Kadr7Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kadr07)
+        ACTID = 7
     }
 
-    fun nextClick(view: View) {
-        val intentKadr8 = Intent(this, Kadr8Activity::class.java)
-        startActivity(intentKadr8)
-        this.finish()
+    fun onClick(view: View){
+        when (view.id)
+        {
+            R.id.nextBtn ->    {
+                val intentNext = Intent(this, ACTIVITY_DICT[ACTID+1]!!::class.java)
+                startActivity(intentNext)
+                this.finish()}
+            R.id.backBtn ->    {
+                val intentBack = Intent(this, ACTIVITY_DICT[ACTID-1]!!::class.java)
+                startActivity(intentBack)
+                this.finish()}
+        }
     }
 
-    fun backClick(view: View){
-        val intentKadr6 = Intent(this, Kadr6Activity::class.java)
-        startActivity(intentKadr6)
-        this.finish()
+    override fun onPause() {
+        super.onPause()
+
+        val saver = pref.edit()
+        saver.putInt(APP_PREFERENCES_ACTID, ACTID)
+        saver.apply()
     }
 }

@@ -31,4 +31,14 @@ class Kadr0IdActivity : AppCompatActivity() {
             this.finish()
         }
     }
+
+    override fun onPause() {
+        super.onPause()
+
+        val saver = pref.edit()
+        saver.putInt(APP_PREFERENCES_ACTID, ACTID)
+        saver.putString(APP_PREFERENCES_NICKNAME, NICKNAME)
+        saver.apply()    }
 }
+
+

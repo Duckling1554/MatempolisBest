@@ -10,11 +10,25 @@ class Kadr22BadActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kadr22_bad)
+        ACTID = 23
     }
 
-    fun nextClick(view: View){
-        val intentKadr0 = Intent(this, MainActivity::class.java)
-        startActivity(intentKadr0)
-        this.finish()
+    fun onClick(view: View){
+        val actidLast = 24
+        when (view.id)
+        {
+            R.id.nextBtn ->    {
+                val intentNext = Intent(this, ACTIVITY_DICT[actidLast]!!::class.java)
+                startActivity(intentNext)
+                this.finish()}
+        }
+    }
+
+    override fun onPause() {
+        super.onPause()
+
+        val saver = pref.edit()
+        saver.putInt(APP_PREFERENCES_ACTID, ACTID)
+        saver.apply()
     }
 }

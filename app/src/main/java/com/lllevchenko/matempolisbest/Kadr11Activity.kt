@@ -12,6 +12,7 @@ class Kadr11Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kadr11)
+        ACTID = 11
     }
 
     var flag = false
@@ -51,19 +52,23 @@ class Kadr11Activity : AppCompatActivity() {
                 ans113Btn.setImageResource(R.drawable.btn_11_3_chosen)
                 flag = true
                 id = 3}
+            R.id.nextBtn ->    {
+                val intentNext = Intent(this, ACTIVITY_DICT[ACTID+1]!!::class.java)
+                startActivity(intentNext)
+                this.finish()}
+            R.id.backBtn ->    {
+                val intentBack = Intent(this, ACTIVITY_DICT[ACTID-1]!!::class.java)
+                startActivity(intentBack)
+                this.finish()}
         }
     }
 
+    override fun onPause() {
+        super.onPause()
 
-    fun nextClick(view: View) {
-        val intentKadr12 = Intent(this, Kadr12Activity::class.java)
-        val alert = ContinueDialog(intentKadr12, this, flag)
-        alert.show(getSupportFragmentManager(), "continue")
-    }
-
-    fun backClick(view: View){
-        val intentKadr10 = Intent(this, Kadr10Activity::class.java)
-        startActivity(intentKadr10)
-        this.finish()
+        val saver = pref.edit()
+        saver.putInt(APP_PREFERENCES_COUNTER, COUNT)
+        saver.putInt(APP_PREFERENCES_ACTID, ACTID)
+        saver.apply()
     }
 }

@@ -43,4 +43,6 @@
     <string name="contentDescrInfo">Инфо текст</string>
     <string name="textGreeting">Привет-привет!\n Мы рады видеть тебя в этой игре!\n Как тебя зовут?</string>
     <string name="hintNickname">напиши здесь своё имя...</string>
+    <string name="contentDescrPoints">Вы набрали очки</string>
+    <string name="textPoints">%1$s!\n Ты набрал %2$d баллов из %3$d!\n Неплохой результат!\n Теперь ты можешь пройти игру заново, вдруг концовка будет другой?..  </string>
 </resources>
