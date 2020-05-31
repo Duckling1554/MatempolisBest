@@ -76,7 +76,7 @@ class MainActivity : AppCompatActivity() {
                 val intentCurrent = Intent(this, ACTIVITY_DICT[ACTID]!!::class.java)
                 startActivity(intentCurrent)
                 this.finish()
-                
+
                 }
             }
 

@@ -53,8 +53,8 @@ class Kadr6Activity : AppCompatActivity() {
                 id = 3}
             R.id.nextBtn ->    {
                 val intentNext = Intent(this, ACTIVITY_DICT[ACTID+1]!!::class.java)
-                startActivity(intentNext)
-                this.finish()}
+                val alert = ContinueDialog(intentNext, this, flag)
+                alert.show(getSupportFragmentManager(), "continue")}
             R.id.backBtn ->    {
                 val intentBack = Intent(this, ACTIVITY_DICT[ACTID-1]!!::class.java)
                 startActivity(intentBack)
