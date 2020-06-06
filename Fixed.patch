@@ -1,0 +1,83 @@
+Index: app/src/main/java/com/lllevchenko/matempolisbest/MainActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/lllevchenko/matempolisbest/MainActivity.kt	(revision 9b5462c10a58abe39d2f24c30a173258c0382b2a)
++++ app/src/main/java/com/lllevchenko/matempolisbest/MainActivity.kt	(date 1590962121913)
+@@ -59,23 +59,24 @@
+         when (view.id)
+         {
+             R.id.newGameBtn ->    {
+-                COUNT = 0
+-                ACTID = 0
+-                NICKNAME = ""
+-                val deleter = pref.edit()
+-                deleter.clear().commit()
+                 val intentKadrId = Intent(this, Kadr0IdActivity::class.java)
+-                startActivity(intentKadrId)
+-                this.finish()}
++                val alert = NewGameDialog(intentKadrId, this)
++                alert.show(getSupportFragmentManager(), "continue")}
+ 
+             R.id.loadGameBtn ->    {
+                 COUNT = pref.getInt(APP_PREFERENCES_COUNTER, 0)
+                 ACTID = pref.getInt(APP_PREFERENCES_ACTID, 0)
+                 NICKNAME = pref.getString(APP_PREFERENCES_NICKNAME, null).toString()
+ 
+-                val intentCurrent = Intent(this, ACTIVITY_DICT[ACTID]!!::class.java)
+-                startActivity(intentCurrent)
+-                this.finish()
++                if (ACTID == 0) {
++                    val toast = Toast.makeText(this, "Нет сохранённой игры", Toast.LENGTH_SHORT)
++                    toast.show()
++                }
++                else {
++                    val intentCurrent = Intent(this, ACTIVITY_DICT[ACTID]!!::class.java)
++                    startActivity(intentCurrent)
++                    this.finish()
++                }
+ 
+                 }
+             }
+Index: app/src/main/java/com/lllevchenko/matempolisbest/NewGameDialog.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/lllevchenko/matempolisbest/NewGameDialog.kt	(date 1590961995414)
++++ app/src/main/java/com/lllevchenko/matempolisbest/NewGameDialog.kt	(date 1590961995414)
+@@ -0,0 +1,32 @@
++package com.lllevchenko.matempolisbest
++
++import android.app.Activity
++import android.app.AlertDialog
++import android.app.Dialog
++import android.content.Intent
++import android.os.Bundle
++import androidx.fragment.app.DialogFragment
++
++class NewGameDialog(newIntent: Intent, activity: Activity): DialogFragment() {
++
++    val intent = newIntent
++
++    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
++        val builder = AlertDialog.Builder(getActivity())
++        return builder.setTitle("Начать новую игру?")
++            .setMessage("Все сохраненные данные будут потеряны.")
++            .setIcon(R.drawable.alert)
++            .setPositiveButton("ОК", {
++                    dialog, which -> COUNT = 0
++                ACTID = 0
++                NICKNAME = ""
++                val deleter = pref.edit()
++                deleter.clear().commit()
++                startActivity(intent)
++                activity?.finish()
++            })
++            .setNegativeButton("Отмена", null)
++            .create()
++    }
++
++}
+\ No newline at end of file

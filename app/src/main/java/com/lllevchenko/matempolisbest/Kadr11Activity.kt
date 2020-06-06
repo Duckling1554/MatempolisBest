@@ -1,13 +1,10 @@
 package com.lllevchenko.matempolisbest
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_kadr11.*
 
-class Kadr11Activity : AppCompatActivity() {
+class Kadr11Activity : ShotActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,14 +24,14 @@ class Kadr11Activity : AppCompatActivity() {
         super.onRestoreInstanceState(savedInstanceState)
         val btnId = savedInstanceState.getInt("btnId")
         when (btnId){
-            1 -> onClick(ans111Btn)
-            2 -> onClick(ans112Btn)
-            3 -> onClick(ans113Btn)
+            1 -> onAnsClick(ans111Btn)
+            2 -> onAnsClick(ans112Btn)
+            3 -> onAnsClick(ans113Btn)
             0 -> {}
         }
     }
 
-    fun onClick(view: View){
+    fun onAnsClick(view: View){
         when (view.id)
         {
             R.id.ans111Btn ->    {ans111Btn.setImageResource(R.drawable.btn_11_1_chosen)
@@ -52,23 +49,6 @@ class Kadr11Activity : AppCompatActivity() {
                 ans113Btn.setImageResource(R.drawable.btn_11_3_chosen)
                 flag = true
                 id = 3}
-            R.id.nextBtn ->    {
-                val intentNext = Intent(this, ACTIVITY_DICT[ACTID+1]!!::class.java)
-                val alert = ContinueDialog(intentNext, this, flag)
-                alert.show(getSupportFragmentManager(), "continue")}
-            R.id.backBtn ->    {
-                val intentBack = Intent(this, ACTIVITY_DICT[ACTID-1]!!::class.java)
-                startActivity(intentBack)
-                this.finish()}
         }
-    }
-
-    override fun onPause() {
-        super.onPause()
-
-        val saver = pref.edit()
-        saver.putInt(APP_PREFERENCES_COUNTER, COUNT)
-        saver.putInt(APP_PREFERENCES_ACTID, ACTID)
-        saver.apply()
     }
 }

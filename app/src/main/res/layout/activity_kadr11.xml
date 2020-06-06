@@ -61,7 +61,7 @@
 
             <ImageButton
                 android:id="@+id/ans111Btn"
-                android:onClick="onClick"
+                android:onClick="onAnsClick"
                 style="@style/Widget.AppCompat.ImageButton"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -78,7 +78,7 @@
 
             <ImageButton
                 android:id="@+id/ans112Btn"
-                android:onClick="onClick"
+                android:onClick="onAnsClick"
                 style="@style/Widget.AppCompat.ImageButton"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -95,7 +95,7 @@
 
             <ImageButton
                 android:id="@+id/ans113Btn"
-                android:onClick="onClick"
+                android:onClick="onAnsClick"
                 style="@style/Widget.AppCompat.ImageButton"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"

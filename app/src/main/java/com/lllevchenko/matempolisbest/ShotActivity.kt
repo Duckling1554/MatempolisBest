@@ -1,23 +1,27 @@
 package com.lllevchenko.matempolisbest
 
 import android.content.Intent
-import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 
-class Kadr21Activity : ShotActivity() {
+open class ShotActivity: AppCompatActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_kadr21)
-        ACTID = 21
+
+
+    override fun onPause() {
+        super.onPause()
+
+        val saver = pref.edit()
+        saver.putInt(APP_PREFERENCES_ACTID, ACTID)
+        saver.apply()
     }
 
-    override fun onClick(view: View){
+
+    open fun onClick(view: View){
         when (view.id)
         {
             R.id.nextBtn ->    {
-                val intentNext = Intent(this, if (COUNT == MAX_COUNT)
-                {ACTIVITY_DICT[ACTID+1]!!::class.java} else {ACTIVITY_DICT[ACTID+2]!!::class.java})
+                val intentNext = Intent(this, ACTIVITY_DICT[ACTID+1]!!::class.java)
                 startActivity(intentNext)
                 this.finish()}
             R.id.backBtn ->    {
@@ -26,4 +30,4 @@ class Kadr21Activity : ShotActivity() {
                 this.finish()}
         }
     }
-    }
+}
