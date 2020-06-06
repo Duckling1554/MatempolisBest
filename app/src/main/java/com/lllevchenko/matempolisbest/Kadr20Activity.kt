@@ -2,7 +2,7 @@ package com.lllevchenko.matempolisbest
 
 import android.os.Bundle
 
-class Kadr20Activity : ShotActivity() {
+class Kadr20Activity : ShotActivity(19, 21) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -4,9 +4,10 @@ import android.content.Intent
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 
-open class ShotActivity: AppCompatActivity() {
+open class ShotActivity(prevKadrId:Int?, nextKadr:Int?): AppCompatActivity() {
 
-
+    val prevKadr = prevKadrId
+    val nextKadr = nextKadr
 
     override fun onPause() {
         super.onPause()
@@ -21,11 +22,11 @@ open class ShotActivity: AppCompatActivity() {
         when (view.id)
         {
             R.id.nextBtn ->    {
-                val intentNext = Intent(this, ACTIVITY_DICT[ACTID+1]!!::class.java)
+                val intentNext = Intent(this, ACTIVITY_DICT[nextKadr]!!::class.java)
                 startActivity(intentNext)
                 this.finish()}
             R.id.backBtn ->    {
-                val intentBack = Intent(this, ACTIVITY_DICT[ACTID-1]!!::class.java)
+                val intentBack = Intent(this, ACTIVITY_DICT[prevKadr]!!::class.java)
                 startActivity(intentBack)
                 this.finish()}
         }

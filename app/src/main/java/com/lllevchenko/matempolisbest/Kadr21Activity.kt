@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 
-class Kadr21Activity : ShotActivity() {
+class Kadr21Activity : ShotActivity(null, null) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -13,11 +13,15 @@ class Kadr21Activity : ShotActivity() {
     }
 
     override fun onClick(view: View){
+
+        val goodEnding = 22
+        val badEnding = 23
+
         when (view.id)
         {
             R.id.nextBtn ->    {
                 val intentNext = Intent(this, if (COUNT == MAX_COUNT)
-                {ACTIVITY_DICT[ACTID+1]!!::class.java} else {ACTIVITY_DICT[ACTID+2]!!::class.java})
+                {ACTIVITY_DICT[goodEnding]!!::class.java} else {ACTIVITY_DICT[badEnding]!!::class.java})
                 startActivity(intentNext)
                 this.finish()}
             R.id.backBtn ->    {

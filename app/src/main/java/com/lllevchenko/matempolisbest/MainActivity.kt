@@ -1,7 +1,5 @@
 package com.lllevchenko.matempolisbest
 
-import android.app.Activity
-import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
@@ -53,6 +51,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         pref = getSharedPreferences(APP_PREFERENCES, MODE_PRIVATE)
+        ACTID = pref.getInt(APP_PREFERENCES_ACTID, 0)
     }
 
     fun onClick(view: View){
@@ -60,12 +59,18 @@ class MainActivity : AppCompatActivity() {
         {
             R.id.newGameBtn ->    {
                 val intentKadrId = Intent(this, Kadr0IdActivity::class.java)
-                val alert = NewGameDialog(intentKadrId, this)
-                alert.show(getSupportFragmentManager(), "continue")}
+                if (ACTID != 0)
+                {
+                    val alert = NewGameDialog(intentKadrId, this)
+                    alert.show(getSupportFragmentManager(), "continue")}
+                else{
+                    startActivity(intentKadrId)
+                    this.finish()
+                }
+                }
 
             R.id.loadGameBtn ->    {
                 COUNT = pref.getInt(APP_PREFERENCES_COUNTER, 0)
-                ACTID = pref.getInt(APP_PREFERENCES_ACTID, 0)
                 NICKNAME = pref.getString(APP_PREFERENCES_NICKNAME, null).toString()
 
                 if (ACTID == 0) {

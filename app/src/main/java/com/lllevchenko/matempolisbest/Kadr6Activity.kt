@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.View
 import kotlinx.android.synthetic.main.activity_kadr06.*
 
-class Kadr6Activity : ShotActivity() {
+class Kadr6Activity : ShotActivity(5, 7) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
