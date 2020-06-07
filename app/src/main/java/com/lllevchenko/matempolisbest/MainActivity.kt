@@ -51,10 +51,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         pref = getSharedPreferences(APP_PREFERENCES, MODE_PRIVATE)
-        ACTID = pref.getInt(APP_PREFERENCES_ACTID, 0)
     }
 
     fun onClick(view: View){
+        ACTID = pref.getInt(APP_PREFERENCES_ACTID, 0)
         when (view.id)
         {
             R.id.newGameBtn ->    {

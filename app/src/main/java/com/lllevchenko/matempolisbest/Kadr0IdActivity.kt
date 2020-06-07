@@ -6,7 +6,7 @@ import android.view.View
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_kadr00_id.*
 
-class Kadr0IdActivity : ShotActivity() {
+class Kadr0IdActivity : ShotActivity(null, null) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
