@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.lllevchenko.matempolisbest">
+    package="com.lllevchenko.matempolis">
 
     <application
         android:allowBackup="true"
@@ -9,33 +9,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".KadrPointsActivity"></activity>
-        <activity android:name=".Kadr0IdActivity" />
-        <activity android:name=".Kadr0InfoActivity" />
-        <activity android:name=".Kadr22BadActivity" />
-        <activity android:name=".Kadr22GoodActivity" />
-        <activity android:name=".Kadr16Activity" />
-        <activity android:name=".Kadr21Activity" />
-        <activity android:name=".Kadr20Activity" />
-        <activity android:name=".Kadr19Activity" />
-        <activity android:name=".Kadr18Activity" />
-        <activity android:name=".Kadr17Activity" />
-        <activity android:name=".Kadr15Activity" />
-        <activity android:name=".Kadr14Activity" />
-        <activity android:name=".Kadr13Activity" />
-        <activity android:name=".Kadr12Activity" />
-        <activity android:name=".Kadr10Activity" />
-        <activity android:name=".Kadr9Activity" />
-        <activity android:name=".Kadr8Activity" />
-        <activity android:name=".Kadr11Activity" />
-        <activity android:name=".Kadr7Activity" />
-        <activity android:name=".Kadr6Activity" />
-        <activity android:name=".Kadr5Activity" />
-        <activity android:name=".Kadr4Activity" />
-        <activity android:name=".Kadr2Activity" />
-        <activity android:name=".Kadr3Activity" />
-        <activity android:name=".Kadr1Activity" />
-        <activity android:name=".MainActivity">
+        <activity android:name="com.lllevchenko.matempolis.KadrPointsActivity"></activity>
+        <activity android:name="com.lllevchenko.matempolis.Kadr0IdActivity" />
+        <activity android:name="com.lllevchenko.matempolis.Kadr0InfoActivity" />
+        <activity android:name="com.lllevchenko.matempolis.Kadr22BadActivity" />
+        <activity android:name="com.lllevchenko.matempolis.Kadr22GoodActivity" />
+        <activity android:name="com.lllevchenko.matempolis.Kadr16Activity" />
+        <activity android:name="com.lllevchenko.matempolis.Kadr21Activity" />
+        <activity android:name="com.lllevchenko.matempolis.Kadr20Activity" />
+        <activity android:name="com.lllevchenko.matempolis.Kadr19Activity" />
+        <activity android:name="com.lllevchenko.matempolis.Kadr18Activity" />
+        <activity android:name="com.lllevchenko.matempolis.Kadr17Activity" />
+        <activity android:name="com.lllevchenko.matempolis.Kadr15Activity" />
+        <activity android:name="com.lllevchenko.matempolis.Kadr14Activity" />
+        <activity android:name="com.lllevchenko.matempolis.Kadr13Activity" />
+        <activity android:name="com.lllevchenko.matempolis.Kadr12Activity" />
+        <activity android:name="com.lllevchenko.matempolis.Kadr10Activity" />
+        <activity android:name="com.lllevchenko.matempolis.Kadr9Activity" />
+        <activity android:name="com.lllevchenko.matempolis.Kadr8Activity" />
+        <activity android:name="com.lllevchenko.matempolis.Kadr11Activity" />
+        <activity android:name="com.lllevchenko.matempolis.Kadr7Activity" />
+        <activity android:name="com.lllevchenko.matempolis.Kadr6Activity" />
+        <activity android:name="com.lllevchenko.matempolis.Kadr5Activity" />
+        <activity android:name="com.lllevchenko.matempolis.Kadr4Activity" />
+        <activity android:name="com.lllevchenko.matempolis.Kadr2Activity" />
+        <activity android:name="com.lllevchenko.matempolis.Kadr3Activity" />
+        <activity android:name="com.lllevchenko.matempolis.Kadr1Activity" />
+        <activity android:name="com.lllevchenko.matempolis.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
