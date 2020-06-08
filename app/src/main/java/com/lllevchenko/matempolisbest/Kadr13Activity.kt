@@ -1,5 +1,6 @@
 package com.lllevchenko.matempolisbest
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import kotlinx.android.synthetic.main.activity_kadr13.*
@@ -49,6 +50,21 @@ class Kadr13Activity : ShotActivity(12, 14) {
                 ans133Btn.setImageResource(R.drawable.btn_13_3_chosen)
                 flag = false
                 id = 3}
+        }
+    }
+
+    override fun onClick(view: View) {
+        when (view.id) {
+            R.id.nextBtn -> {
+                val intentNext = Intent(this, ACTIVITY_DICT[ACTID + 1]!!::class.java)
+                val alert = ContinueDialog(intentNext, this, flag)
+                alert.show(getSupportFragmentManager(), "continue")
+            }
+            R.id.backBtn -> {
+                val intentBack = Intent(this, ACTIVITY_DICT[ACTID - 1]!!::class.java)
+                startActivity(intentBack)
+                this.finish()
+            }
         }
     }
 }

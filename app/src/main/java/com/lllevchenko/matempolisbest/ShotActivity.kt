@@ -4,10 +4,10 @@ import android.content.Intent
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 
-open class ShotActivity(prevKadrId:Int?, nextKadr:Int?): AppCompatActivity() {
+open class ShotActivity(prevKadrId:Int?, nextKadrId:Int?): AppCompatActivity() {
 
     val prevKadr = prevKadrId
-    val nextKadr = nextKadr
+    val nextKadr = nextKadrId
 
     override fun onPause() {
         super.onPause()
