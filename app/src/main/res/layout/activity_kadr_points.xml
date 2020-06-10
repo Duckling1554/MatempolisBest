@@ -23,7 +23,7 @@
         android:text="@string/textPoints"
         android:textAlignment="center"
         android:textColor="@color/colorText"
-        android:textSize="24sp"
+        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

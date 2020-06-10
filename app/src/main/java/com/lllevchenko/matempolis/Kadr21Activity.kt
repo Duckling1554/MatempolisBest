@@ -20,7 +20,7 @@ class Kadr21Activity : ShotActivity(null, null) {
         when (view.id)
         {
             R.id.nextBtn ->    {
-                val intentNext = Intent(this, if (COUNT == MAX_COUNT)
+                val intentNext = Intent(this, if (COUNT >= MAX_COUNT)
                 {ACTIVITY_DICT[goodEnding]!!::class.java} else {ACTIVITY_DICT[badEnding]!!::class.java})
                 startActivity(intentNext)
                 this.finish()}
