@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name="com.lllevchenko.matempolis.KadrPointsActivity"></activity>
+        <activity android:name="com.lllevchenko.matempolis.ShotActivity" />
         <activity android:name="com.lllevchenko.matempolis.Kadr0IdActivity" />
         <activity android:name="com.lllevchenko.matempolis.Kadr0InfoActivity" />
         <activity android:name="com.lllevchenko.matempolis.Kadr22BadActivity" />

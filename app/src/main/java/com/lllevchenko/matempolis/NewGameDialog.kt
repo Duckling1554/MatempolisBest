@@ -1,5 +1,4 @@
 package com.lllevchenko.matempolis
-
 import android.app.Activity
 import android.app.AlertDialog
 import android.app.Dialog
@@ -18,12 +17,14 @@ class NewGameDialog(newIntent: Intent, activity: Activity): DialogFragment() {
             .setIcon(R.drawable.alert)
             .setPositiveButton("ОК", {
                     dialog, which -> COUNT = 0
+
+                //обнуляет значения глобальных переменных
                 ACTID = 0
                 NICKNAME = ""
                 val deleter = pref.edit()
-                deleter.clear().commit()
+                deleter.clear().commit() //очищает файл сохранения пользовательских настроек
                 startActivity(intent)
-                activity?.finish()
+                activity?.finish() //завершает текущую операцию
             })
             .setNegativeButton("Отмена", null)
             .create()

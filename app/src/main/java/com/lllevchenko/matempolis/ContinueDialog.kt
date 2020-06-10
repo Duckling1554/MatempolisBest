@@ -19,8 +19,8 @@ class ContinueDialog(newIntent: Intent, activity: Activity, flag: Boolean): Dial
             .setIcon(R.drawable.alert)
             .setPositiveButton("ОК", {
                 dialog, which -> startActivity(intent)
-                if (flag) COUNT ++
-                activity?.finish()
+                if (flag) COUNT ++ //увеличивает значение COUNT, если ответ верный
+                activity?.finish() //завершает текущую операцию
             })
             .setNegativeButton("Отмена", null)
             .create()

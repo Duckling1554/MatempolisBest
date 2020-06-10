@@ -34,6 +34,7 @@ class Kadr6Activity : ShotActivity(5, 7) {
     fun onAnsClick(view: View){
         when (view.id)
         {
+            //верный ответ
             R.id.ans61Btn ->    {ans61Btn.setImageResource(R.drawable.btn_6_1_chosen)
                 ans62Btn.setImageResource(R.drawable.btn_6_2)
                 ans63Btn.setImageResource(R.drawable.btn_6_3)

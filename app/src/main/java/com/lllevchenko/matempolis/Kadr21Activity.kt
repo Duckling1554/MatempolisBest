@@ -20,10 +20,13 @@ class Kadr21Activity : ShotActivity(null, null) {
         when (view.id)
         {
             R.id.nextBtn ->    {
+
+                //проверка кол-ва очков у игрок, если их не меньше порогового значения, будет хорошая концовка
                 val intentNext = Intent(this, if (COUNT >= MAX_COUNT)
                 {ACTIVITY_DICT[goodEnding]!!::class.java} else {ACTIVITY_DICT[badEnding]!!::class.java})
                 startActivity(intentNext)
                 this.finish()}
+
             R.id.backBtn ->    {
                 val intentBack = Intent(this, ACTIVITY_DICT[ACTID-1]!!::class.java)
                 startActivity(intentBack)

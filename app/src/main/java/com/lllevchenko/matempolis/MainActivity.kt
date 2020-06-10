@@ -7,11 +7,13 @@ import android.os.*
 import android.view.*
 import android.widget.Toast
 
+//глобальные переменные
 var COUNT = 0
 val MAX_COUNT = 5
 var ACTID = 0
 var NICKNAME = ""
 
+//словарь соответствий ACTID и Activity
 val ACTIVITY_DICT = mapOf(0 to MainActivity(),
                                                     1 to Kadr1Activity(),
                                                     2 to Kadr2Activity(),
@@ -50,35 +52,41 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        pref = getSharedPreferences(APP_PREFERENCES, MODE_PRIVATE)
+        pref = getSharedPreferences(APP_PREFERENCES, MODE_PRIVATE) //инициализация переменной
     }
 
     fun onClick(view: View){
-        ACTID = pref.getInt(APP_PREFERENCES_ACTID, 0)
+        ACTID = pref.getInt(APP_PREFERENCES_ACTID, 0) //восстанавление сохранённого значения ACTID
         when (view.id)
         {
+            //нажатие кнопки "новая игра"
             R.id.newGameBtn ->    {
                 val intentKadrId = Intent(this, Kadr0IdActivity::class.java)
+
+                //если у пользователя есть сохранённая игра, появится диалоговое окно "Начать новую игру?"
                 if (ACTID != 0)
                 {
                     val alert = NewGameDialog(intentKadrId, this)
                     alert.show(getSupportFragmentManager(), "continue")}
+
                 else{
                     startActivity(intentKadrId)
                     this.finish()
                 }
                 }
-
+            //нажатие кнопки "загрузить"
             R.id.loadGameBtn ->    {
-                COUNT = pref.getInt(APP_PREFERENCES_COUNTER, 0)
-                NICKNAME = pref.getString(APP_PREFERENCES_NICKNAME, null).toString()
 
+                //если у пользователя нет сохранённой игры, появится уведомление "Нет сохранённой игры"
                 if (ACTID == 0) {
                     val toast = Toast.makeText(this, "Нет сохранённой игры", Toast.LENGTH_SHORT)
                     toast.show()
                 }
+
                 else {
-                    val intentCurrent = Intent(this, ACTIVITY_DICT[ACTID]!!::class.java)
+                    COUNT = pref.getInt(APP_PREFERENCES_COUNTER, 0) //восстановление значений счётчика
+                    NICKNAME = pref.getString(APP_PREFERENCES_NICKNAME, null).toString() //восстановление имени пользователя
+                    val intentCurrent = Intent(this, ACTIVITY_DICT[ACTID]!!::class.java) //запуск сохранённой Activity
                     startActivity(intentCurrent)
                     this.finish()
                 }

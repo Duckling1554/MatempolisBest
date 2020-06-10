@@ -6,9 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 
 open class ShotActivity(prevKadrId:Int?, nextKadrId:Int?): AppCompatActivity() {
 
+    //NULLABLE идентификаторы предыдущей и следующей Activity
     val prevKadr = prevKadrId
     val nextKadr = nextKadrId
 
+    //Сохранение текущего ACTID
     override fun onPause() {
         super.onPause()
 
@@ -17,7 +19,7 @@ open class ShotActivity(prevKadrId:Int?, nextKadrId:Int?): AppCompatActivity() {
         saver.apply()
     }
 
-
+    //Функция нажатия кнопок "далее" и "назад"
     open fun onClick(view: View){
         when (view.id)
         {

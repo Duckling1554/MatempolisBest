@@ -11,6 +11,7 @@ class Kadr0InfoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kadr00_info)
+        //приветсвие пользователя
         textViewInfo.text = getResources().getString(R.string.textInfo, NICKNAME)
 }
 

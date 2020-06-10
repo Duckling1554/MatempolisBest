@@ -17,6 +17,7 @@ class Kadr0IdActivity : ShotActivity(null, null) {
 
         val nickname = nicknameText.text.toString().trim()
 
+        //если пользователь не ввёл имя, появится уведомление "Сначала введи имя!"
         if (nickname == ""){
             val toast = Toast.makeText(this, "Сначала введи имя!", Toast.LENGTH_SHORT)
             toast.show()

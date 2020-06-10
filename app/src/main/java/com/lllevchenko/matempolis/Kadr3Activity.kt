@@ -40,6 +40,7 @@ class Kadr3Activity : ShotActivity(2, 4) {
                 ans33Btn.setImageResource(R.drawable.btn_3_3)
                 flag = false
                 id = 1}
+            //верный ответ
             R.id.ans32Btn ->    {ans31Btn.setImageResource(R.drawable.btn_3_1)
                 ans32Btn.setImageResource(R.drawable.btn_3_2_chosen)
                 ans33Btn.setImageResource(R.drawable.btn_3_3)
